@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 import GlobalStyles from '../styles/global';
 
+import ProductsMarquee from '../components/ProductsMarquee';
 import CountDownTimer from '../components/CountDownTimer';
 
 const LAUNCH_DATE = 'Mon May 01 2023 17:00:00 GMT+0300';
@@ -20,6 +21,7 @@ const Main = styled.main`
 
 const ContentWrapper = styled.div`
   grid-area: 1/1;
+  display: flex;
 `;
 
 const IndexPage = () => {
@@ -36,6 +38,7 @@ const IndexPage = () => {
           }}
         />
         <ContentWrapper>
+          <ProductsMarquee />
           <CountDownTimer targetDate={LAUNCH_DATE} />
         </ContentWrapper>
       </Main>

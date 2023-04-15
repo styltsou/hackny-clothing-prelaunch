@@ -1,5 +1,4 @@
 import * as React from 'react';
-import StaticImage from 'gatsby-plugin-image';
 
 import styled from 'styled-components';
 
@@ -8,10 +7,10 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  margin-right: 10rem;
+  margin-right: 7rem;
 
   @media only screen and (max-width: 400px) {
-    margin-right: 5rem;
+    margin-right: 4rem;
   }
 `;
 
@@ -24,12 +23,10 @@ const ImageWrapper = styled.div`
   aspect-ratio: 1;
 `;
 
-export default function Product({ imageSrc }) {
+export default function Product({ children }) {
   return (
     <Wrapper>
-      <ImageWrapper>
-        <StaticImage src={imageSrc} alt="new-product" placeholder="blur" />
-      </ImageWrapper>
+      <ImageWrapper>{children}</ImageWrapper>
     </Wrapper>
   );
 }
