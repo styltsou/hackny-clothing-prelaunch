@@ -18,10 +18,6 @@ const Main = styled.main`
   background-color: #2d53a6;
 `;
 
-const BgWrapper = styled.div`
-  grid-area: 1/1;
-`;
-
 const ContentWrapper = styled.div`
   grid-area: 1/1;
 `;
@@ -30,7 +26,6 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Main>
-        {/* <BgWrapper> */}
         <StaticImage
           src="../images/bg-desktop.jpg"
           alt=""
@@ -39,9 +34,7 @@ const IndexPage = () => {
           style={{
             gridArea: '1/1',
           }}
-          // objectFit="cover"
         />
-        {/* </BgWrapper> */}
         <ContentWrapper>
           <CountDownTimer targetDate={LAUNCH_DATE} />
         </ContentWrapper>

@@ -11,7 +11,7 @@ const Flex = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--color-white);
-  backdrop-filter: blur(0.8rem);
+  backdrop-filter: blur(0rem);
   z-index: 100000;
 
   & h1 {
