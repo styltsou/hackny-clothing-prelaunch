@@ -22,6 +22,7 @@ const Main = styled.main`
 const ContentWrapper = styled.div`
   grid-area: 1/1;
   display: flex;
+  max-height: 100%;
 `;
 
 const IndexPage = () => {
@@ -35,6 +36,7 @@ const IndexPage = () => {
           layout="fullWidth"
           style={{
             gridArea: '1/1',
+            maxHeight: '100%',
           }}
         />
         <ContentWrapper>

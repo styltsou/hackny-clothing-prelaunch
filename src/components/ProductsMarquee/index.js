@@ -7,7 +7,7 @@ import Product from './Product';
 export default function ProductsMarquee({ speed }) {
   return (
     <Marquee
-      style={{ overflow: 'hidden', flex: '1' }}
+      style={{ overflow: 'hidden' }}
       gradient={false}
       speed={speed || `60`}
     >
@@ -16,13 +16,20 @@ export default function ProductsMarquee({ speed }) {
           src="../../images/products/p1.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
+
       <Product key="2">
         <StaticImage
           src="../../images/products/p2.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
       <Product key="3">
@@ -30,6 +37,9 @@ export default function ProductsMarquee({ speed }) {
           src="../../images/products/p3.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
       <Product key="4">
@@ -37,6 +47,9 @@ export default function ProductsMarquee({ speed }) {
           src="../../images/products/p4.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
       <Product key="5">
@@ -44,6 +57,9 @@ export default function ProductsMarquee({ speed }) {
           src="../../images/products/p5.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
       <Product key="6">
@@ -51,6 +67,9 @@ export default function ProductsMarquee({ speed }) {
           src="../../images/products/p6.png"
           alt="new-product"
           placeholder="blur"
+          style={{
+            maxHeight: '100vh',
+          }}
         />
       </Product>
     </Marquee>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   align-items: center;
   margin-right: 7rem;
