@@ -14,12 +14,13 @@ const Flex = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--color-white);
+  padding: 0 2rem;
   /* backdrop-filter: blur(1.3rem); */
   z-index: 100000;
 
   & h1 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 6rem;
     line-height: 100%;
@@ -33,6 +34,19 @@ const Flex = styled.div`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+
+  & h1,
+  h3 {
+    width: 80rem;
+    max-width: 100%;
+  }
+
+  @media only screen and (max-width: 815rem) {
+    & h1,
+    h3 {
+      width: 70rem;
+    }
   }
 `;
 
@@ -48,9 +62,9 @@ const FractionFlex = styled.div`
   border-radius: var(--border-radius-medium);
   /* ${frostedGlass}; */
 
-  &:not(:last-child) {
+  /* &:not(:last-child) {
     margin-right: 3rem;
-  }
+  } */
 
   & h2 {
     font-size: 8rem;
