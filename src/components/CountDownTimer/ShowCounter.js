@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import { frostedGlass } from '../../styles/glass';
 
+// ! This is not clean at all. Component hierachy should be different but this was a last minute call
+import Newsletter from '../Newsletter';
+
 const Flex = styled.div`
   position: absolute;
   top: 0;
@@ -146,6 +149,7 @@ export default function CountDown({ days, hours, minutes, seconds }) {
         <FractionComponent name="minutes" time={minutes} />
         <FractionComponent name="seconds" time={seconds} />
       </h1>
+      <Newsletter />
     </Flex>
   );
 }

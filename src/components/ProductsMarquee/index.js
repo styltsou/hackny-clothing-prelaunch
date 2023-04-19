@@ -32,29 +32,9 @@ export default function ProductsMarquee({ speed }) {
           }}
         />
       </Product>
-      <Product key="3">
-        <StaticImage
-          src="../../images/products/p3.png"
-          alt="new-product"
-          placeholder="blur"
-          style={{
-            maxHeight: '100vh',
-          }}
-        />
-      </Product>
       <Product key="4">
         <StaticImage
           src="../../images/products/p4.png"
-          alt="new-product"
-          placeholder="blur"
-          style={{
-            maxHeight: '100vh',
-          }}
-        />
-      </Product>
-      <Product key="5">
-        <StaticImage
-          src="../../images/products/p5.png"
           alt="new-product"
           placeholder="blur"
           style={{
