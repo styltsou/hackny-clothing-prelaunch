@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-const InputWrapper = styled.div`
+const Form = styled.form`
   display: flex;
   aling-items: center;
-  width: 50rem;
-  max-width: 100%;
+  width: 100%;
 
   & > * {
     padding: 1.5rem 3rem;
@@ -34,13 +34,19 @@ const Button = styled.button`
   text-transform: uppercase;
 `;
 
-function NewsletterInput() {
+function NewsletterForm({ onSubmit }) {
+  const [email, setEmail] = useState('');
+
   return (
-    <InputWrapper>
-      <Input type="email" />
-      <Button>Join</Button>
-    </InputWrapper>
+    <Form>
+      <Input
+        placeholder="email@example.com"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
+      <Button onClick={() => onSubmit(email)}>Join</Button>
+    </Form>
   );
 }
 
-export default NewsletterInput;
+export default NewsletterForm;

@@ -11,23 +11,30 @@ const Flex = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  /* border-radius: var(--border-radius-medium); */
-  /* ${frostedGlass}; */
-  /* background-color: var(--color-black); */
   margin-top: 3rem;
+  width: 55rem;
+  max-width: 100%;
+  /* ${frostedGlass}; */
 `;
 
 const H4 = styled.h4`
   color: var(--color-white);
   font-size: 3rem;
   margin-bottom: 3rem;
+  line-height: 120%;
+  text-align: center;
 `;
 
 function Newsletter() {
+  const handleSubmit = email => {
+    console.log(email);
+    window.alert(email);
+  };
+
   return (
     <Flex>
-      <H4>Join our Newsletter!</H4>
-      <NewsletterInput />
+      <H4>Join the waitlist and get free shipping</H4>
+      <NewsletterInput onSubmit={handleSubmit} />
     </Flex>
   );
 }
