@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
+
 import styled from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+
+import Error from './Error';
 
 const Form = styled.form`
+  position: relative;
   display: flex;
   aling-items: center;
   width: 100%;
@@ -34,17 +39,29 @@ const Button = styled.button`
   text-transform: uppercase;
 `;
 
-function NewsletterForm({ onSubmit }) {
+function NewsletterForm() {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setError('Invalid email address!');
+    setEmail('');
+  };
 
   return (
     <Form>
       <Input
         placeholder="email@example.com"
         value={email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={e => {
+          setError(null);
+          setEmail(e.target.value);
+        }}
       />
-      <Button onClick={() => onSubmit(email)}>Join</Button>
+      <Button onClick={handleSubmit}>Join</Button>
+      <AnimatePresence>{error && <Error>{error}</Error>}</AnimatePresence>
     </Form>
   );
 }
