@@ -35,8 +35,7 @@ const handler = async (req, res) => {
   } else if (method === 'GET') {
     const request = {
       url: `/v3/marketing/lists`,
-      method: 'POST',
-      body: { name: 'waitlist' },
+      method: 'GET',
     };
 
     const response = await client.request(request);
