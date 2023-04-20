@@ -35,14 +35,15 @@ const handler = async (req, res) => {
   } else if (method === 'GET') {
     const request = {
       url: `/v3/marketing/lists`,
-      method: 'GET',
+      method: 'POST',
+      body: { name: 'waitlist' },
     };
 
     const response = await client.request(request);
 
     res.status(200).json({
       status: 'success',
-      data: response,
+      data: response.body,
     });
   } else {
     res.status(404).json({
