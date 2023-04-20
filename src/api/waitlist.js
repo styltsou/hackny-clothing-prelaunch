@@ -32,7 +32,7 @@ const handler = async (req, res) => {
     }
   } else if (method === 'GET') {
     const request = {
-      url: `/v3/marketing/lists/${process.env.WAITLIST_SENDGRID_ID}/contacts/count`,
+      url: `/v3/marketing/lists/${process.env.WAITLIST_SENDGRID_ID}`,
       method: 'GET',
     };
 
