@@ -14,13 +14,11 @@ const handler = async (req, res) => {
     };
 
     try {
-      const sendigridResponse = await client.request({
+      const [response, body] = await client.request({
         url: `/v3/marketing/contacts`,
         method: 'PUT',
         body: data,
       });
-
-      // ! Check respones here maybe??
 
       res.status(200).json({
         status: 'success',
@@ -34,15 +32,15 @@ const handler = async (req, res) => {
     }
   } else if (method === 'GET') {
     const request = {
-      url: `/v3/marketing/lists`,
+      url: `/v3/marketing/lists/${process.env.WAITLIST_SENDGRID_ID}/contacts/count`,
       method: 'GET',
     };
 
-    const response = await client.request(request);
+    const [response, body] = await client.request(request);
 
     res.status(200).json({
       status: 'success',
-      data: response,
+      data: body,
     });
   } else {
     res.status(404).json({
