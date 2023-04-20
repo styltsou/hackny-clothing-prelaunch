@@ -42,7 +42,7 @@ const handler = async (req, res) => {
 
     res.status(200).json({
       status: 'success',
-      data: response.body,
+      data: response,
     });
   } else {
     res.status(404).json({
