@@ -76,16 +76,29 @@ function NewsletterForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
+  const [serverError, setServerError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
   const submitForm = async data => {
-    console.log(data.email);
-    setSuccessMessage('Joined the waitlist successfully!');
+    setSuccessMessage(null);
+
+    try {
+      const addContactRes = await axios.post('/api/waitlist', {
+        email: data.email,
+      });
+
+      setSuccessMessage('Joined the waitlist successfully!');
+      reset({ email: '' });
+    } catch (e) {
+      setServerError('Oops! Something went wrong');
+      console.log(e);
+    }
   };
 
   return (
@@ -97,9 +110,18 @@ function NewsletterForm() {
         }}
         placeholder="email@example.com"
       />
-      <Button type="submit">Submit</Button>
+      <Button
+        type="submit"
+        onClick={() => {
+          setServerError(null);
+          setSuccessMessage(null);
+        }}
+      >
+        Submit
+      </Button>
       <AnimatePresence>
         {errors.email?.message && <Error>{errors.email?.message}</Error>}
+        {serverError && <Error>{serverError}</Error>}
         {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
       </AnimatePresence>
     </Form>

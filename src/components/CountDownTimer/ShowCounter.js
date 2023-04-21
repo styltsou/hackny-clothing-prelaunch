@@ -16,7 +16,7 @@ const Flex = styled.div`
   align-items: center;
   color: var(--color-white);
   padding: 0 2rem;
-  z-index: 100000;
+  z-index: 1000;
 
   & h1 {
     width: 100%;
