@@ -20,6 +20,18 @@ const H4 = styled.h4`
   line-height: 120%;
   text-align: center;
   text-transform: uppercase;
+
+  @media only screen and (max-width: 785px) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: 620px) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 1.6rem;
+  }
 `;
 
 function Newsletter() {

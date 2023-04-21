@@ -13,6 +13,11 @@ const Div = styled(motion.div)`
   color: var(--color-white);
   line-height: 100%;
   text-align: center;
+
+  @media only screen and (max-width: 815px) {
+    font-size: 1.8rem;
+    transform: translateY(100%);
+  }
 `;
 
 const variants = {

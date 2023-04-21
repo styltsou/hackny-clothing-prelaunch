@@ -102,11 +102,11 @@ const GlassWrapper = styled.div`
   }
 
   @media only screen and (max-width: 410px) {
-    padding: 4rem;
+    padding: 5rem 4rem;
   }
 
   @media only screen and (max-width: 370px) {
-    padding: 2rem;
+    padding: 5rem 2rem;
   }
 `;
 
