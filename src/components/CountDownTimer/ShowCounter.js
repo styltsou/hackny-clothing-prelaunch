@@ -38,7 +38,6 @@ const Flex = styled.div`
     line-height: 120%;
     text-align: center;
     text-transform: uppercase;
-    /* letter-spacing: 2px; */
 
     & > span {
       display: flex;
@@ -53,6 +52,34 @@ const Flex = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 850px) {
+    & h3 {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 785px) {
+    & h3 {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 565px) {
+    & h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    & h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+    padding: 0 1rem;
+  }
 `;
 
 const GlassWrapper = styled.div`
@@ -66,9 +93,21 @@ const GlassWrapper = styled.div`
   border-radius: var(--border-radius-medium);
   backdrop-filter: blur(6rem);
 
-  /* @media only screen and (max-width: 815rem) {
+  @media only screen and (max-width: 815px) {
     width: 70rem;
-  } */
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 5rem;
+  }
+
+  @media only screen and (max-width: 410px) {
+    padding: 4rem;
+  }
+
+  @media only screen and (max-width: 370px) {
+    padding: 2rem;
+  }
 `;
 
 const FractionFlex = styled.div`
@@ -91,10 +130,17 @@ const FractionFlex = styled.div`
     text-transform: uppercase;
   }
 
-  @media only screen and (max-width: 785px) {
-    width: 12rem;
-    height: 12rem;
+  @media only screen and (max-width: 850px) {
+    & h2 {
+      font-size: 7.5rem;
+    }
 
+    & span {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 785px) {
     & h2 {
       font-size: 6rem;
     }
@@ -105,13 +151,6 @@ const FractionFlex = styled.div`
   }
 
   @media only screen and (max-width: 565px) {
-    width: 8rem;
-    height: 8rem;
-
-    &:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-
     & h2 {
       font-size: 3.5rem;
     }
@@ -122,13 +161,6 @@ const FractionFlex = styled.div`
   }
 
   @media only screen and (max-width: 360px) {
-    width: 6.8rem;
-    height: 6.8rem;
-
-    &:not(:last-child) {
-      margin-right: 1.2rem;
-    }
-
     & h2 {
       font-size: 3rem;
       margin-bottom: 0.4rem;

@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 import GlobalStyles from '../styles/global';
 
+import Logo from '../components/Logo';
 import ProductsMarquee from '../components/ProductsMarquee';
 import CountDownTimer from '../components/CountDownTimer';
 
@@ -40,6 +41,7 @@ const IndexPage = () => {
           }}
         />
         <ContentWrapper>
+          <Logo />
           <ProductsMarquee />
           <CountDownTimer targetDate={LAUNCH_DATE} />
         </ContentWrapper>

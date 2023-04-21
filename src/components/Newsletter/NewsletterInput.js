@@ -21,6 +21,18 @@ const Form = styled.form`
   & > * {
     padding: 1rem 3rem;
   }
+
+  @media only screen and (max-width: 580px) {
+    & > * {
+      padding: 1rem 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 370px) {
+    & > * {
+      padding: 1rem;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -30,6 +42,10 @@ const Input = styled.input`
   background-color: var(--color-white);
   color: var(--color-black);
   font-size: 1.8rem;
+
+  @media only screen and (max-width: 580px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Button = styled.button`
@@ -45,6 +61,10 @@ const Button = styled.button`
   line-height: 100%;
   text-transform: uppercase;
   transition: 0.2s all ease-out;
+
+  @media only screen and (max-width: 580px) {
+    font-size: 1.4rem;
+  }
 
   &:active {
     background-color: var(--color-black);
