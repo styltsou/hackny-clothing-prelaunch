@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { frostedGlass } from '../../styles/glass';
 import NewsletterForm from './NewsletterInput';
 
 const Flex = styled.div`
@@ -9,11 +8,9 @@ const Flex = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 4.5rem;
   width: 55rem;
   max-width: 100%;
-  /* ${frostedGlass}; */
 `;
 
 const H4 = styled.h4`

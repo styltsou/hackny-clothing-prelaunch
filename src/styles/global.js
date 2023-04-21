@@ -16,7 +16,8 @@ export default createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 62.5%;
-    font-family: Roboto, sans-serif;
+    font-family: 'nimbus-sans', sans-serif;
+    font-weight: 400;
 
     @media only screen and (max-width: 100em) {
       font-size: 60%;

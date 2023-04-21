@@ -7,7 +7,7 @@ const Div = styled(motion.div)`
   left: 0;
   bottom: 0;
   transform: translateY(100%);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--color-danger);
   line-height: 100%;
   margin-top: 1.5rem;

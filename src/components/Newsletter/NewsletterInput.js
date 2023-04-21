@@ -19,7 +19,7 @@ const Form = styled.form`
   width: 100%;
 
   & > * {
-    padding: 1.5rem 3rem;
+    padding: 1rem 3rem;
   }
 `;
 
@@ -29,13 +29,14 @@ const Input = styled.input`
   border-radius: 10rem 0 0 10rem;
   background-color: var(--color-white);
   color: var(--color-black);
-  font-size: 2rem;
+  font-size: 1.8rem;
 `;
 
 const Button = styled.button`
   color: var(--color-black);
   background-color: var(--color-white);
   font-size: 1.7rem;
+  font-weight: 700;
   border: none;
   border-radius: 0 10rem 10rem 0;
   display: flex;
@@ -43,6 +44,12 @@ const Button = styled.button`
   align-items: center;
   line-height: 100%;
   text-transform: uppercase;
+  transition: 0.2s all ease-out;
+
+  &:active {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
 `;
 
 function NewsletterForm() {

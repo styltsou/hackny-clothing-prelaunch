@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { transparentGlass } from '../../styles/glass';
-
 // ! This is not clean at all. Component hierachy should be different but this was a last minute call
 import Newsletter from '../Newsletter';
 
@@ -40,7 +38,7 @@ const Flex = styled.div`
     line-height: 120%;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     & > span {
       display: flex;
@@ -64,9 +62,9 @@ const GlassWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7rem;
+  padding: 10rem;
   border-radius: var(--border-radius-medium);
-  ${transparentGlass};
+  backdrop-filter: blur(6rem);
 
   /* @media only screen and (max-width: 815rem) {
     width: 70rem;

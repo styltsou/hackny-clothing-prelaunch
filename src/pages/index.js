@@ -51,4 +51,13 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Hackney Clothing</title>;
+export const Head = () => (
+  <>
+    <title>Hackney Clothing</title>;
+    <meta
+      name="description"
+      content="Hackney Clothing is a clothing brand ..."
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/mix8vtp.css"></link>
+  </>
+);
