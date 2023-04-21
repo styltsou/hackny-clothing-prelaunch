@@ -33,18 +33,6 @@ const handler = async (req, res) => {
         message: e?.message || e,
       });
     }
-  } else if (method === 'GET') {
-    const request = {
-      url: `/v3/marketing/lists`,
-      method: 'GET',
-    };
-
-    const [response, body] = await client.request(request);
-
-    res.status(200).json({
-      status: 'success',
-      data: body,
-    });
   } else {
     res.status(404).json({
       status: 'fail',
