@@ -1,10 +1,7 @@
 const client = require('@sendgrid/client');
 
-const SENDGRID_API_KEY =
-  process.env.SENDGRID_API_KEY ||
-  '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';
-const WAITLIST_SENDGRID_ID =
-  process.env.WAITLIST_SENDGRID_ID || 'b2ab146-fb3f-4c25-bce5-457dff88bd9a';
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+const WAITLIST_SENDGRID_ID = process.env.WAITLIST_SENDGRID_ID;
 
 client.setApiKey(SENDGRID_API_KEY);
 
