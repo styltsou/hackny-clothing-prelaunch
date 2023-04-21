@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
+
 import styled from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 
+import schema from './validationSchema';
+import SuccessMessage from './SuccessMessage';
 import Error from './Error';
 
 const Form = styled.form`
@@ -27,8 +33,8 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  color: var(--color-white);
-  background-color: var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
   font-size: 1.7rem;
   border: none;
   border-radius: 0 10rem 10rem 0;
@@ -40,28 +46,35 @@ const Button = styled.button`
 `;
 
 function NewsletterForm() {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    setError('Invalid email address!');
-    setEmail('');
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const submitForm = async data => {
+    console.log(data.email);
+    setSuccessMessage('Joined the waitlist successfully!');
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit(submitForm)}>
       <Input
-        placeholder="email@example.com"
-        value={email}
-        onChange={e => {
-          setError(null);
-          setEmail(e.target.value);
+        {...register('email')}
+        onChange={() => {
+          if (successMessage) setSuccessMessage(null);
         }}
+        placeholder="email@example.com"
       />
-      <Button onClick={handleSubmit}>Join</Button>
-      <AnimatePresence>{error && <Error>{error}</Error>}</AnimatePresence>
+      <Button type="submit">Submit</Button>
+      <AnimatePresence>
+        {errors.email?.message && <Error>{errors.email?.message}</Error>}
+        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
+      </AnimatePresence>
     </Form>
   );
 }

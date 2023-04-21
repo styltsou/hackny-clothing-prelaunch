@@ -1,6 +1,12 @@
 const client = require('@sendgrid/client');
 
-client.setApiKey(process.env.SENDGRID_API_KEY);
+const SENDGRID_API_KEY =
+  process.env.SENDGRID_API_KEY ||
+  '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';
+const WAITLIST_SENDGRID_ID =
+  process.env.WAITLIST_SENDGRID_ID || 'b2ab146-fb3f-4c25-bce5-457dff88bd9a';
+
+client.setApiKey(SENDGRID_API_KEY);
 
 const handler = async (req, res) => {
   const { method, body } = req;
@@ -9,7 +15,7 @@ const handler = async (req, res) => {
     const { email } = body;
 
     const data = {
-      list_ids: [process.env.WAITLIST_SENDGRID_ID],
+      list_ids: [WAITLIST_SENDGRID_ID],
       contacts: [{ email }],
     };
 

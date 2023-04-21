@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 
 const Div = styled(motion.div)`
   position: absolute;
+  width: 100%;
   left: 0;
   bottom: 0;
-  transform: translateY(100%);
-  font-size: 1.8rem;
-  color: var(--color-danger);
+  transform: translateY(120%);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-white);
   line-height: 100%;
-  margin-top: 1.5rem;
+  text-align: center;
 `;
 
 const variants = {
@@ -34,7 +36,7 @@ const variants = {
   },
 };
 
-export default function Error({ children }) {
+export default function SuccessMessage({ children }) {
   return (
     <Div variants={variants} initial="enter" animate="animate" exit="exit">
       {children}

@@ -18,10 +18,11 @@ const Flex = styled.div`
 
 const H4 = styled.h4`
   color: var(--color-white);
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
   line-height: 120%;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 function Newsletter() {
