@@ -108,7 +108,7 @@ function NewsletterForm() {
         onChange={() => {
           if (successMessage) setSuccessMessage(null);
         }}
-        placeholder="email@example.com"
+        placeholder="your@email.com"
       />
       <Button
         type="submit"
