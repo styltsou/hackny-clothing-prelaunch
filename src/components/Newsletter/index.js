@@ -37,7 +37,7 @@ const H4 = styled.h4`
 function Newsletter() {
   return (
     <Flex>
-      <H4>Join the waitlist</H4>
+      <H4>Join the waitlist and get free shipping</H4>
       <NewsletterForm />
     </Flex>
   );
