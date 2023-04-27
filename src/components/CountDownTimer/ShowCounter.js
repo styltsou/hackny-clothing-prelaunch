@@ -191,7 +191,7 @@ export default function CountDown({ days, hours, minutes, seconds }) {
           <span>2023</span>
         </h3>
         <h1>
-          <FractionComponent name="days" time={days} />
+          <FractionComponent name="days" time="??" />
           <FractionComponent name="hours" time={hours} />
           <FractionComponent name="minutes" time={minutes} />
           <FractionComponent name="seconds" time={seconds} />
