@@ -9,7 +9,7 @@ import Logo from '../components/Logo';
 import ProductsMarquee from '../components/ProductsMarquee';
 import CountDownTimer from '../components/CountDownTimer';
 
-const LAUNCH_DATE = 'Mon May 01 2023 17:00:00 GMT+0300';
+const LAUNCH_DATE = 'Mon May 15 2023 17:00:00 GMT+0300';
 
 const Main = styled.main`
   display: grid;
