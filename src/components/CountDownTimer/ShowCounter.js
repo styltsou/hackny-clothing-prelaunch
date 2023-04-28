@@ -90,7 +90,7 @@ const GlassWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10rem;
-  border-radius: 1.6rem;
+  border-radius: 3.4rem;
   backdrop-filter: blur(6rem);
 
   @media only screen and (max-width: 815px) {
