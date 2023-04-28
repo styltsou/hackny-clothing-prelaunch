@@ -20,7 +20,6 @@ const Column = styled.div`
   align-items: center;
   width: 100%;
 `;
-
 const Form = styled.form`
   position: relative;
   display: flex;
@@ -103,7 +102,7 @@ function NewsletterForm() {
       const addContactRes = await axios.post('/api/waitlist', {
         email: data.email,
       });
-      
+
       setIsLoading(false);
       setSuccessMessage('Joined the waitlist successfully!');
       reset({ email: '' });
@@ -139,8 +138,8 @@ function NewsletterForm() {
           {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
         </AnimatePresence>
       </Form>
-        {isLoading && <Loader />}
-   <Column/>
+      {isLoading && <Loader />}
+    </Column>
   );
 }
 
