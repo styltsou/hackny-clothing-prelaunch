@@ -9,7 +9,7 @@ const Div = styled(motion.div)`
   bottom: 0;
   transform: translateY(120%);
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-white);
   line-height: 100%;
   text-align: center;
