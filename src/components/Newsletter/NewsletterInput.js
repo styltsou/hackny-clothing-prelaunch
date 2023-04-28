@@ -138,8 +138,8 @@ function NewsletterForm() {
           {serverError && <Error>{serverError}</Error>}
           {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
         </AnimatePresence>
-            {isLoading && <Loader />}
       </Form>
+        {isLoading && <Loader />}
    <Column/>
   );
 }
