@@ -11,9 +11,9 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        "trackingId": process.env.GA_TRACKING_ID
+        trackingIds: [process.env.GA_TRACKING_ID]
       }
     },
     {
