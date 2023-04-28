@@ -8,9 +8,18 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 
+import Loader from '../Loader';
 import schema from './validationSchema';
 import SuccessMessage from './SuccessMessage';
 import Error from './Error';
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
 const Form = styled.form`
   position: relative;
@@ -82,49 +91,56 @@ function NewsletterForm() {
     resolver: yupResolver(schema),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
   const submitForm = async data => {
     setSuccessMessage(null);
+    setIsLoading(true);
 
     try {
       const addContactRes = await axios.post('/api/waitlist', {
         email: data.email,
       });
-
+      
+      setIsLoading(false);
       setSuccessMessage('Joined the waitlist successfully!');
       reset({ email: '' });
     } catch (e) {
+      setIsLoading(false);
       setServerError('Oops! Something went wrong');
       console.log(e);
     }
   };
 
   return (
-    <Form onSubmit={handleSubmit(submitForm)}>
-      <Input
-        {...register('email')}
-        onChange={() => {
-          if (successMessage) setSuccessMessage(null);
-        }}
-        placeholder="your@email.com"
-      />
-      <Button
-        type="submit"
-        onClick={() => {
-          setServerError(null);
-          setSuccessMessage(null);
-        }}
-      >
-        Submit
-      </Button>
-      <AnimatePresence>
-        {errors.email?.message && <Error>{errors.email?.message}</Error>}
-        {serverError && <Error>{serverError}</Error>}
-        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
-      </AnimatePresence>
-    </Form>
+    <Column>
+      <Form onSubmit={handleSubmit(submitForm)}>
+        <Input
+          {...register('email')}
+          onChange={() => {
+            if (successMessage) setSuccessMessage(null);
+          }}
+          placeholder="your@email.com"
+        />
+        <Button
+          type="submit"
+          onClick={() => {
+            setServerError(null);
+            setSuccessMessage(null);
+          }}
+        >
+          Submit
+        </Button>
+        <AnimatePresence>
+          {errors.email?.message && <Error>{errors.email?.message}</Error>}
+          {serverError && <Error>{serverError}</Error>}
+          {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
+        </AnimatePresence>
+            {isLoading && <Loader />}
+      </Form>
+   <Column/>
   );
 }
 
