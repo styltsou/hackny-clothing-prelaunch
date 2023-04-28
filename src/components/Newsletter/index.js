@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import DotPulseLoader from './Loader'
 import NewsletterForm from './NewsletterInput';
 
 const Flex = styled.div`
