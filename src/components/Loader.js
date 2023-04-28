@@ -1,9 +1,11 @@
+import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: 0.6rem;
 `;
 
 const pulseAnimation = keyframes`
