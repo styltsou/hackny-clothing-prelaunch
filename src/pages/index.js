@@ -58,7 +58,7 @@ export const Head = () => (
     <title>Hackney Clothing</title>;
     <meta
       name="description"
-      content="Hackney Clothing is a clothing brand ..."
+      content="Hackney is a lifestyle clothing brand based in Thessaloniki, Greece, founded by Stefaons Softis in early 2017"
     />
     <link rel="stylesheet" href="https://use.typekit.net/mix8vtp.css"></link>
   </>
