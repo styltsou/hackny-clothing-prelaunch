@@ -22,7 +22,10 @@ const handler = async (req, res) => {
         method: 'PUT',
         body: data,
       });
-
+      
+      console.log('res', response);
+      console.log('body', body);
+      
       res.status(200).json({
         status: 'success',
         email,
